@@ -35,16 +35,18 @@ export default function Test2Screen() {
   var color = "LEMONCHIFFON";
   var color2 = "CORAL";
 
+  const [isCoral, setIsCoral] = React.useState(false);
+
   return (
     <Box sx={{paddingY: 4}}>
       <Box className="stateComp">
         <Typography
-          sx={{ p: 3, backgroundColor: color, width: '90%', textAlign: 'center'}}
+          sx={{ p: 3, backgroundColor: isCoral ? color2 : color, width: '90%', textAlign: 'center', color: !isCoral ? color2 : color}}
         >
-          Lemonchiffon
+          { isCoral ? color2 : color}
         </Typography>
 
-        <Button variant="contained" onClick={() => (color = "coral")} sx={{width: '50%'}}>
+        <Button variant="contained" onClick={() => setIsCoral(prevState => !prevState)} sx={{width: '50%'}}>
           Toggle
         </Button>
       </Box>

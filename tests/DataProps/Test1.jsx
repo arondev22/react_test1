@@ -28,14 +28,17 @@ import { Box, Typography } from "@mui/material";
 
 // eslint-disable-next-line react/prop-types
 
-function Test1() {
-  return <Typography> Show props here </Typography>;
+function Test1({textprop}) {
+  return <Typography variant="h1">{textprop}</Typography>;
 }
 
 export default function Test1Screen() {
+  const textprop = 'Hello World!';
   return (
     <Box className="testCont">
-      <Test1 />
+      <Test1 
+        textprop={textprop}
+      />
     </Box>
   );
 }
