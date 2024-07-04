@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 const tasks = {
   React_Challenge1: {
     file: "./tests/UI/Test6.jsx",
-    desc: "For this test, you will be translating a mockup from Figma to html, styled with TailwindCSS & incorporating MUIv5.",
+    desc: "For this test, we have a simple figma layout. How can we translate this mockup to html, while implementing TailwindCSS styling & MUIv5 components to achieve the required outcome?",
     steps: [
       "Use TailwindCSS.",
       "Use MUIv5.",

@@ -16,7 +16,7 @@ const tasks = {
   task_1: {
     component: Test1Screen,
     file: "./tests/DataProps/Test1.jsx",
-    desc: "For this test, we want the h1 text to be dynamic so that every instance of this component can display different texts.",
+    desc: "How can we modify the Test1 component in React to accept a text prop and then render it on the Test1Screen component?",
     steps: [
       "Allow the Test1 component to receive a text prop.",
       "Render the Test1 component onto the Test1Screen component.",
@@ -27,7 +27,7 @@ const tasks = {
   task_2: {
     component: Test3Screen,
     file: "./tests/DataProps/Test3.jsx",
-    desc: "For this test, we want to display an object's [ keys ] and [ properties ] on a list.",
+    desc: "How can you create a list that dynamically displays the keys and properties of an object? Make sure that the keys precede their corresponding values, without explicitly typing out the object keys.",
     steps: [
       "Map out the person object so it can be displayed in a list.",
       "The object keys should precede the object properties.",
