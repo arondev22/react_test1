@@ -294,3 +294,14 @@ const AppContactForm = () => {
     </Box>
   )
 }
+
+// --------------------------------------------------------------------------------
+
+
+// Hi Angelo, currently I dont have experience using tailwind CSS. 😔
+// I used the react MUI styling just to complete my coding assessment.
+// But I am trying to convert it into tailwind CSS but I reached my time limit.
+// Thank you for the understanding 😔
+
+
+// --------------------------------------------------------------------------------
