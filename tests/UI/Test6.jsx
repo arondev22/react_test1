@@ -205,7 +205,8 @@ const AppButton = ({
   startIcon=null,
   buttonName='AppButton',
   sx,
-  fullWidth
+  fullWidth,
+  onClick
 }) => {
   return(
     <Button
@@ -213,6 +214,7 @@ const AppButton = ({
       variant={variant}
       startIcon={startIcon}
       fullWidth={fullWidth}
+      onClick={onClick}
     >
       {buttonName}
     </Button>
@@ -223,7 +225,9 @@ const AppTextInput = ({
   label,
   placeholder,
   sx,
-  multiline
+  multiline,
+  value,
+  onChange
 }) => {
   return(
     <Box
@@ -237,9 +241,11 @@ const AppTextInput = ({
       <TextField 
         id="outlined-basic" 
         variant="outlined" 
+        value={value}
         fullWidth 
         placeholder={placeholder} 
         multiline={multiline} 
+        onChange={onChange}
         rows={4} 
         inputProps={{ style: { color: '#64748B', fontSize: '12px' } }}
       />
@@ -248,9 +254,9 @@ const AppTextInput = ({
 }
 
 const AppContactForm = () => {
+  const [formData, setFormData] = React.useState({name: '', email: '', message: ''});
   return(
-    <Box sx={{backgroundColor: 'rgba(204, 213, 245, 0.2)', display: 'grid', justifyItems: 'center', paddingBottom: '20px', marginTop: '30px' }}
-    >
+    <Box sx={{backgroundColor: 'rgba(204, 213, 245, 0.2)', display: 'grid', justifyItems: 'center', paddingBottom: '20px', marginTop: '30px', '@media (min-width: 640px)': { paddingLeft: '300px', paddingRight: '300px', paddingBottom: '90px' } }}>
       <Box
         sx={{ textAlign: 'center', margin: '50px' }}
       >
@@ -263,20 +269,27 @@ const AppContactForm = () => {
       </Box>
       <AppTextInput 
         label='Name'
+        value={formData.name}
+        onChange={(e) => setFormData({...formData, name: e.target.value})}
         sx={{ margin: '12px', width: '90%' }}
       />
       <AppTextInput 
         label='Email Address'
+        value={formData.email}
+        onChange={(e) => setFormData({...formData, email: e.target.value})}
         sx={{ margin: '12px', width: '90%' }}
       />
       <AppTextInput 
         label='Message'
+        value={formData.message}
+        onChange={(e) => setFormData({...formData, message: e.target.value})}
         multiline
         sx={{ margin: '12px', width: '90%', marginBottom: '40px' }}
       />
       <AppButton 
         buttonName="Send Message"
         sx={{ backgroundColor: '#182C75', width: '90%', }}
+        onClick={() => alert(JSON.stringify(formData))}
       />
     </Box>
   )
